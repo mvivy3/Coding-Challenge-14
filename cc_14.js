@@ -43,3 +43,26 @@ ticketContainer.addEventListener(`click`, function(){
 // Test Cases
 addTicket(`Teddy Joseph`, `Not working, `Low`);
 addTicket(`Lucy Elizabeth`, `Unavailable`, `High`);
+
+//TASK 4: IMPLEMENTING TICKET RESOLUTION WITH EVENT BUBBLING
+  resolveButton.addEventListener(`click`, function(event){ //attach a click event listener to the resolve button
+    const nameInput = document.createElement(`input`);
+    nameInput.setAttribute(`type`, `text`);
+    nameInput.value = nameHeading.textContent
+
+    const issueInput = document.createElement(`input`); // 
+    issueInput.setAttribute(`type`, `text`);
+    issueInput.value = issueText.textContent;
+
+    const priorityInput = document.createElement(`input`);
+    priorityInput.setAttribute(`type`, `text`);
+    priorityInput.value = priorityState.textContent.split(": ")[1]
+})
+
+//Element tickets
+ticket.appendChild(nameHeading);
+ticket.appendChild(issueText);
+ticket.appendChild(priorityState);
+ticket.appendChild(resolveButton);
+ticket.appendChild(editButton);
+ticketContainer.appendChild(ticket);

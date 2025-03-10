@@ -23,3 +23,23 @@ function addTicket(customerName, issueDescription, priorityLevel){ // building a
     editButton.textContent = `Edit Ticket`;
     editButton.setAttribute(`class`, `edit-button`)
 }
+
+// TASK 3: Converting NodeLists to Arrays for Bulk Updates
+function highlightingHighPriorityTickets(){ // function for highlighting high priority tickets
+    const highlightingHighPriorityTickets = document.querySelectorAll(`.high`);
+    const highPriorityArray = Array.from(highlightingHighPriorityTickets);
+
+    highPriorityArray.forEach(ticket => {
+        ticket.style.backgroundColor = `purple`; // adding background color
+        ticket.style.border = `3px blue`;// adding border color
+    });
+}
+highlightingHighPriorityTickets()
+
+const ticketContainer = document.getElementById(`ticketContainer`);
+ticketContainer.addEventListener(`click`, function(){
+    console.log(`Ricket Was Clicked`)
+});
+// Test Cases
+addTicket(`Teddy Joseph`, `Not working, `Low`);
+addTicket(`Lucy Elizabeth`, `Unavailable`, `High`);
